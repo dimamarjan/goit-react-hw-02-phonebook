@@ -7,7 +7,7 @@ export class Filter extends Component {
             <div>
                 <LabelContacts>
                     <LabelContactsText>Find contacts by name</LabelContactsText>
-                    <InputContacts onChange={this.props.onFilterHandle}/>
+                    <InputContacts onChange={this.props.onHandleChange}/>
                 </LabelContacts>
             </div>
         )

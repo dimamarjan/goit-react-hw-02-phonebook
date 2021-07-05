@@ -4,6 +4,7 @@ export const LabelContacts = styled.label`
 display: flex;
 flex-direction: column;
 font-size: 20px;
+margin-left: 15px;
 `;
 
 export const LabelContactsText = styled.span`

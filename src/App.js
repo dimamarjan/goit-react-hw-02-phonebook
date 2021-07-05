@@ -37,23 +37,31 @@ export default class App extends Component {
   };
 
   filterDataHandle = (event) => {
-    console.log(event.target.value);
     const inputData = event.target.value;
     this.setState({
       filter: inputData,
     });
-    console.log(this.state.filter);
   };
 
-  // filterContacts(filterDataState) {
-  //   const stateDataList = this.state.contacts;
-  //   console.log(stateDataList);
-  //   console.log(stateDataList.filter())
-  //   // return stateDataList.filter((element) => {
-  //   //   console.log(element.toLowerCase().indexOf(filterDataState.toLowerCase()) > -1);
-  //   //     return element.toLowerCase().indexOf(filterDataState.toLowerCase()) > -1;
-  //   // })
-  // }
+
+  filterContacts = () => {
+    const { contacts } = this.state;
+    const stateFilterItem = this.state.filter;
+    const newArrData = [...contacts.filter((contactItem) => {
+      return contactItem.name.toLowerCase().indexOf(stateFilterItem.toLowerCase()) > -1;
+    })];
+    return newArrData;
+  };
+
+
+  deleteContact = (event) => {
+    const { contacts } = this.state;
+    contacts.splice(event.target.value, 1);
+    this.setState({
+      contacts: contacts
+    })
+  }
+  
 
   render() {
     return (
@@ -64,8 +72,8 @@ export default class App extends Component {
           onAddContact={this.addContact}
         />
         <h2>Contacts</h2>
-        <Filter onFilterHandle={this.filterDataHandle} />
-        {/* <ContactList data={this.filterContacts(this.state.filter)} /> */}
+        <Filter onHandleChange={this.filterDataHandle} />
+        <ContactList onDelete={this.deleteContact} filtredDataArr={this.filterContacts()} />
       </div>
     );
   }
