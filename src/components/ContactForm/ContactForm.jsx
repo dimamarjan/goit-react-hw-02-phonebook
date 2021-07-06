@@ -5,7 +5,7 @@ export class ContactForm extends Component {
     render() {
         return (
             <div>
-                <FormPhoneBook>
+                <FormPhoneBook onSubmit={this.props.onAddContact}>
                     <LabelForm>
                         <LabelText>Name</LabelText>
                         <InputForm
@@ -28,7 +28,7 @@ export class ContactForm extends Component {
                             onChange={this.props.onHandleChange}>
                         </InputForm>
                     </LabelForm>
-                    <SubmitButton onClick={this.props.onAddContact}>Add contact</SubmitButton>
+                    <SubmitButton>Add contact</SubmitButton>
                 </FormPhoneBook>
             </div>
         )

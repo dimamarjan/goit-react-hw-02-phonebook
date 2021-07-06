@@ -5,6 +5,7 @@ margin-left: 15px;
 `;
 
 export const ContactListItem = styled.li`
+text-transform: capitalize;
 :not(:last-child){
     margin-bottom: 15px;
 }

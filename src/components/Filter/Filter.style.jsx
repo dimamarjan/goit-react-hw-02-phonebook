@@ -8,7 +8,12 @@ margin-left: 15px;
 `;
 
 export const LabelContactsText = styled.span`
-margin-bottom:10px;
+margin-bottom: 10px;
+`;
+
+export const AccentText = styled.span`
+text-decoration: underline;
+font-weight: 600;
 `;
 
 export const InputContacts = styled.input`

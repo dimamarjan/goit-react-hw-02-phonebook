@@ -6,11 +6,11 @@ export class ContactList extends Component {
         return (
             <div>
                 <ContactListSection>
-                    {this.props.filtredDataArr.map((contactItem, index) => (
+                    {this.props.filtredDataArr.map((contactItem) => (
                         <ContactListItem key={contactItem.id}>
                             <ContactItemText>{contactItem.name}: {contactItem.number}</ContactItemText>
                             <DelContactButton
-                                value={index}
+                                value={contactItem.id}
                                 onClick={this.props.onDelete}>
                                 Delete</DelContactButton>
                         </ContactListItem>
